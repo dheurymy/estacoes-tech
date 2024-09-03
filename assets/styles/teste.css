@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+   --corFundo: #180161; 
+   --corDestaques: #FF6D00; 
+   --corBranco : #FFF;
+   --corCinza : #ECECEC;
+
+}
+
+body {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+   width: 100%;
+   height: 100vh;
+
+   font-family: "Inter", sans-serif;
+
+   background-image: url("../images/fundo.svg");
+   background-size: cover;
+}
+
+main {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 2em;
+   gap: 2em;
+}
+
+.textoPrincipal {
+   max-width: 50%;
+}
+
+.textoPrincipal h1 {
+   font-size: 2.5em;
+   color: var(--corDestaques);
+   margin-bottom: 0.5em;
+}
+
+.textoPrincipal p {
+   font-size: 1.2em;
+   line-height: 1.5;
+   color: var(--corCinza);
+   margin-bottom: 1.5em;
+   opacity: 0; 
+   transform: translateY(-100px); 
+   animation: fadeIn 1s ease-out forwards; 
+}
+
+@keyframes fadeIn {
+   to {
+       opacity: 1; 
+       transform: translateY(0);
+   }
+}
+
+.botaoPrincipal {
+   display: flex;
+   align-items: center;
+   gap: 0.5em;
+   padding: 0.5em 1em;
+
+   background-color: var(--corDestaques);
+   border: 1px solid var(--corDestaques);
+   border-radius: 0.3em;
+
+   font-size: 1.5em;
+   font-weight: bold;
+   color: var(--corCinza);
+   cursor: pointer;
+   transition: all 0.3s ease;
+}
+
+.botaoPrincipal:hover {
+   background-color: var(--corCinza);
+   color: var(--corDestaques);
+}
+
+.botaoPrincipal img {
+   transition: all 0.3s ease;
+}
+
+.imagemPrincipal img {
+   width: 100%;
+   height: auto;
+   max-width: 500px;
+}
+
+/* Ajustes para dispositivos menores */
+@media (max-width: 768px) {
+   main {
+       flex-direction: column;
+       text-align: center;
+   }
+
+   .textoPrincipal {
+       max-width: 100%;
+   }
+
+   .imagemPrincipal img {
+       max-width: 100%;
+   }
+}

@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@import url('https://fonts.cdnfonts.com/css/nasalization-2');
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    background-color: var(--corFundoHeader);
+
+
+    padding: 1em 0 1em 0;
+
+    font-family: "Inter", sans-serif;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5em;
+
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.navLink {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7em;
+
+    width: 15%;
+
+    color: var(--corBranco);
+
+    border: 1px solid var(--corCinza);
+    border-radius: 0.4em;
+
+    font-size: small;
+    font-weight: 300;
+
+    padding: 0.3em;
+}
+
+.navLink.active {
+    background-color: var(--corDestaques); 
+    border: 1px solid var(--corDestaques);
+    color: var(--corFundoHeader); 
+    font-weight: 600;
+}
+
+
+.hambNav {
+    display: none;
+}
+
+
+@media screen and (max-width: 1150px) {
+    nav {
+
+        gap: 2em;
+    }
+
+    .navLink {
+
+        width: 18%;
+        font-size: smaller;
+
+    }
+}
+
+@media screen and (max-width: 909px) {
+    nav {
+
+        gap: 1em;
+    }
+
+    .navLink {
+
+        width: 18%;
+        font-size: xx-small;
+
+    }
+}
+
+@media screen and (max-width: 724px) {
+    nav {
+
+        gap: 0.5em;
+    }
+
+    .navLink {
+
+        width: auto;
+        font-size: xx-small;
+
+    }
+}
+
+@media screen and (max-width: 501px) {
+    .mainTitle {
+        display: none;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hambNav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+
+        width: 95%;
+    }
+
+    .hambTitle {
+        color: var(--corBranco);
+
+        font-family: "Space Mono", monospace;
+
+        font-size: 1.5em;
+        font-weight: 500;
+        text-align: center;
+
+        width: 80%;
+    }
+
+    .toggle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+
+        width: 40px;
+        height: 40px;
+
+        background-color: var(--corFundoHeader);
+        border: none;
+
+        cursor: pointer;
+    }
+
+    .hambLine {
+        border: 1px solid var(--corCinza);
+        border-radius: 3.5px;
+
+        width: 30px;
+        height: 5px;
+
+        background-color: var(--corCinza);
+
+        transition: all 0.3s ease-in-out;
+    }
+
+    .toggle.active .hambLine:nth-child(1) {
+
+        transform: rotate(45deg) translate(9.5px, 5px);
+        background-color: var(--corDestaques);
+        border: 1px solid var(--corDestaques);
+    }
+
+    .toggle.active .hambLine:nth-child(2) {
+        opacity: 0;
+    }
+
+    .toggle.active .hambLine:nth-child(3) {
+        transform: rotate(-45deg) translate(8.5px, -5px);
+        background-color: var(--corDestaques);
+        border: 1px solid var(--corDestaques);
+    }
+
+    nav.active {
+
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+
+        height: 90dvh;
+
+        background-color: var(--corFundoHeader);
+
+        padding: 1em 0;
+
+
+    }
+
+    main.active {
+        display: none;
+    }
+
+
+
+
+}
